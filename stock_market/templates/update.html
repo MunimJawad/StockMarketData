@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<body>
+    <div class="container2">
+        <h1>Update Data</h1>
+        <form action="{% url 'uprec' mem.id %}" method="post">
+            {% csrf_token %}
+            <label for="">Date</label><br><br>
+            <input type="date" name="date" value="{{mem.date}}"><br><br>
+            <label for="">Trade Code</label><br><br>
+            <input type="text" name="trade_code" value="{{mem.trade_code}}"><br><br>
+            <label for="">High</label><br><br>
+            <input type="text" name="high" value="{{mem.high}}"><br><br>
+            <label for="">Low</label><br><br>
+            <input type="text" name="low" value="{{mem.low}}"><br><br>
+            <label for="">Open</label><br><br>
+            <input type="text" name="open" value="{{mem.open}}"><br><br>
+            <label for="">Close</label><br><br>
+            <input type="text" name="close" value="{{mem.close}}"><br><br>
+            <label for="">Volume</label><br><br>
+            <input type="text" name="volume" value="{{mem.volume}}"><br><br>
+            <button type="submit" id="new1">Update</button>
+        </form>
+
+    </div>
+</body>
+
+</html>
